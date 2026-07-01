@@ -3,162 +3,168 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Иконки Нутри — выбор концепта</title>
+<title>Иконка Нутри — доводка концепта №1</title>
 <style>
   :root{
-    --bg:#0E1217; --card:#1C232C; --line:#2C333B; --text:#ECEFF1; --muted:#99A2AD;
-    --green:#34C759; --violet:#A78BFA; --orange:#FFB23E; --blue:#5AA9FF; --teal:#3FC7E0;
+    --bg:#0E1217; --card:#1C232C; --line:#2C333B; --text:#ECEFF1; --muted:#99A2AD; --green:#34C759;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
     -webkit-font-smoothing:antialiased;padding:24px 16px 56px}
-  header{max-width:720px;margin:0 auto 8px}
+  header{max-width:760px;margin:0 auto 8px}
   h1{font-size:22px;font-weight:800;margin:0 0 6px}
-  .sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 18px}
-  .grid{max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px}
-  @media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+  .sub{color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 18px}
+  .grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
   .card{background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:20px;
     box-shadow:0 2px 14px rgba(0,0,0,.35);padding:18px;display:flex;gap:16px;align-items:flex-start}
-  .ico{flex:0 0 auto;width:104px;height:104px;border-radius:24px;overflow:hidden;
-    box-shadow:0 6px 18px rgba(0,0,0,.45)}
-  .ico svg{display:block;width:104px;height:104px}
+  .ico{flex:0 0 auto;width:112px;height:112px;border-radius:26px;overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,.5)}
+  .ico svg{display:block;width:112px;height:112px}
   .meta{min-width:0}
   .num{display:inline-block;font-size:12px;font-weight:800;color:var(--bg);background:var(--green);
-    border-radius:999px;padding:2px 9px;margin-bottom:6px}
+    border-radius:999px;padding:2px 10px;margin-bottom:6px}
   .name{font-size:17px;font-weight:700;margin:0 0 4px}
   .why{color:var(--muted);font-size:13px;line-height:1.5;margin:0}
-  .home{display:flex;align-items:center;gap:10px;margin-top:12px}
-  .home .mini{width:44px;height:44px;border-radius:11px;overflow:hidden}
-  .home .mini svg{width:44px;height:44px;display:block}
-  .home .ph{width:44px;height:44px;border-radius:11px;background:#333b45}
-  .home .lbl{font-size:11px;color:var(--muted)}
-  footer{max-width:720px;margin:22px auto 0;color:var(--muted);font-size:13px;line-height:1.6}
+  .full{grid-column:1/-1}
+  .home{display:flex;align-items:center;gap:12px;margin-top:6px;flex-wrap:wrap}
+  .home .mini{width:52px;height:52px;border-radius:13px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.4)}
+  .home .mini svg{width:52px;height:52px;display:block}
+  .home .cap{font-size:11px;color:var(--muted);text-align:center;width:52px;margin-top:4px}
+  .homewrap{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start}
+  .col{display:flex;flex-direction:column;align-items:center}
+  footer{max-width:760px;margin:22px auto 0;color:var(--muted);font-size:13px;line-height:1.6}
 </style>
 </head>
 <body>
 <header>
-  <h1>Иконки Нутри — выбери концепт</h1>
-  <p class="sub">Все — <b>универсальные и без лица</b>: айдентика приложения не привязана к персоне, ведь характеры (Подруга / Тренер / Эксперт / Весельчак) меняются. Палитра — из приложения. Напиши номер понравившегося или правки; ничего не публикую до твоего «ок».</p>
+  <h1>Иконка Нутри — доводка №1 (сделал «сочнее»)</h1>
+  <p class="sub">Все три — та же ДНК: <b>кольцо КБЖУ + росток</b>, безликие и универсальные (работают для любой персоны), но теперь с глубиной, свечением и характером — чтобы марка «манила», а не была плоским значком. Напиши номер (или смешать/поправить) — доведу победителя и вставлю в приложение.</p>
 </header>
 
 <div class="grid">
-  <!-- 1: Кольцо макросов + росток -->
+
+  <!-- A: свечение-халло + сочный росток -->
   <div class="card">
     <div class="ico">
       <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="bg1" cx="50%" cy="38%" r="75%">
-            <stop offset="0%" stop-color="#1a2029"/><stop offset="100%" stop-color="#0E1217"/>
+          <radialGradient id="bgA" cx="50%" cy="40%" r="72%">
+            <stop offset="0%" stop-color="#1e3f29"/><stop offset="55%" stop-color="#122019"/><stop offset="100%" stop-color="#0E1217"/>
           </radialGradient>
+          <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5AE27D"/><stop offset="1" stop-color="#2AA84C"/></linearGradient>
+          <linearGradient id="bA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7DC0FF"/><stop offset="1" stop-color="#3E86E0"/></linearGradient>
+          <linearGradient id="vA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C4B0FF"/><stop offset="1" stop-color="#8A6BE8"/></linearGradient>
+          <linearGradient id="oA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC97A"/><stop offset="1" stop-color="#F59A2E"/></linearGradient>
+          <linearGradient id="leafA" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2AA84C"/><stop offset="1" stop-color="#6BF08C"/></linearGradient>
+          <filter id="glowA" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9" result="b"/></filter>
         </defs>
-        <rect width="512" height="512" fill="url(#bg1)"/>
-        <g transform="rotate(-90 256 256)" fill="none" stroke-width="30" stroke-linecap="round">
+        <rect width="512" height="512" fill="url(#bgA)"/>
+        <!-- glow underlay -->
+        <g transform="rotate(-90 256 256)" fill="none" stroke-width="34" stroke-linecap="round" filter="url(#glowA)" opacity=".55">
           <circle cx="256" cy="256" r="150" stroke="#34C759" stroke-dasharray="188 754.5"/>
           <circle cx="256" cy="256" r="150" stroke="#5AA9FF" stroke-dasharray="188 754.5" transform="rotate(90 256 256)"/>
           <circle cx="256" cy="256" r="150" stroke="#A78BFA" stroke-dasharray="188 754.5" transform="rotate(180 256 256)"/>
           <circle cx="256" cy="256" r="150" stroke="#FFB23E" stroke-dasharray="188 754.5" transform="rotate(270 256 256)"/>
         </g>
-        <!-- росток -->
-        <path d="M256 330 C256 300 256 276 256 246" fill="none" stroke="#ECEFF1" stroke-width="14" stroke-linecap="round"/>
-        <path d="M256 268 C224 268 198 244 198 208 C236 208 258 232 256 268 Z" fill="#ECEFF1"/>
-        <path d="M256 250 C288 250 314 226 314 190 C276 190 254 214 256 250 Z" fill="#34C759"/>
-      </svg>
-    </div>
-    <div class="meta">
-      <span class="num">1</span>
-      <p class="name">Кольцо макросов + росток</p>
-      <p class="why">4 цвета КБЖУ в кольце (белки·углеводы·жиры) + росток = «учёт питания и рост». Прямо про суть приложения, наши фирменные цвета.</p>
-    </div>
-  </div>
-
-  <!-- 2: Лист-вилка (минимал) -->
-  <div class="card">
-    <div class="ico">
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="lf2" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#4BE07A"/><stop offset="100%" stop-color="#2AA84C"/>
-          </linearGradient>
-        </defs>
-        <rect width="512" height="512" fill="#12171E"/>
-        <!-- лист -->
-        <path d="M336 150 C210 150 150 236 150 340 C150 356 156 366 168 372 C270 372 362 300 362 178 C362 166 350 150 336 150 Z" fill="url(#lf2)"/>
-        <!-- средняя жила как черенок вилки -->
-        <path d="M176 356 C232 300 300 232 340 176" fill="none" stroke="#0E1217" stroke-opacity=".35" stroke-width="14" stroke-linecap="round"/>
-        <!-- зубцы-жилки (намёк на вилку) -->
-        <g stroke="#0E1217" stroke-opacity=".30" stroke-width="11" stroke-linecap="round">
-          <path d="M250 300 L300 300"/><path d="M232 262 L296 262"/><path d="M224 224 L286 224"/>
+        <!-- sharp ring w/ gradient arcs -->
+        <g transform="rotate(-90 256 256)" fill="none" stroke-width="34" stroke-linecap="round">
+          <circle cx="256" cy="256" r="150" stroke="url(#gA)" stroke-dasharray="188 754.5"/>
+          <circle cx="256" cy="256" r="150" stroke="url(#bA)" stroke-dasharray="188 754.5" transform="rotate(90 256 256)"/>
+          <circle cx="256" cy="256" r="150" stroke="url(#vA)" stroke-dasharray="188 754.5" transform="rotate(180 256 256)"/>
+          <circle cx="256" cy="256" r="150" stroke="url(#oA)" stroke-dasharray="188 754.5" transform="rotate(270 256 256)"/>
         </g>
+        <!-- sprout hero -->
+        <path d="M256 342 C253 302 256 274 256 244" fill="none" stroke="#EEF7F0" stroke-width="15" stroke-linecap="round"/>
+        <path d="M256 300 C250 256 214 234 168 229 C170 274 210 304 256 300 Z" fill="url(#leafA)"/>
+        <path d="M256 288 C262 240 302 216 350 210 C348 258 308 292 256 288 Z" fill="url(#leafA)"/>
+        <path d="M276 236 C300 226 324 222 344 221" fill="none" stroke="#EAFBEF" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+        <circle cx="352" cy="176" r="7" fill="#EAFBEF" opacity=".85"/>
+        <circle cx="330" cy="158" r="4" fill="#EAFBEF" opacity=".6"/>
       </svg>
     </div>
     <div class="meta">
-      <span class="num">2</span>
-      <p class="name">Лист-вилка (минимал)</p>
-      <p class="why">Один чистый лист, жилки намекают на вилку — «здоровая еда». Максимально простая, отлично читается мелко.</p>
+      <span class="num">A</span>
+      <p class="name">Свечение + сочный росток</p>
+      <p class="why">Тёмно-зелёный ореол за кольцом, градиентные дуги, «живой» блестящий росток с искоркой. Премиально и тепло — тянет ткнуть.</p>
     </div>
   </div>
 
-  <!-- 3: Пузырь + лист (ИИ-диетолог) -->
+  <!-- B: сочный градиентный фон -->
   <div class="card">
     <div class="ico">
       <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="bub3" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#34C759"/><stop offset="100%" stop-color="#3FC7E0"/>
+          <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#12463F"/><stop offset="52%" stop-color="#123024"/><stop offset="100%" stop-color="#0E1217"/>
           </linearGradient>
+          <linearGradient id="leafB" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#EAFBEF"/><stop offset="1" stop-color="#B8F5C9"/></linearGradient>
+          <filter id="glowB" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="7" result="b"/></filter>
         </defs>
-        <rect width="512" height="512" fill="#12171E"/>
-        <!-- пузырь речи -->
-        <path d="M150 130 h212 a44 44 0 0 1 44 44 v128 a44 44 0 0 1 -44 44 h-96 l-58 52 v-52 h-58 a44 44 0 0 1 -44 -44 v-128 a44 44 0 0 1 44 -44 Z" fill="url(#bub3)"/>
-        <!-- лист внутри -->
-        <path d="M312 196 C238 196 200 240 200 292 C200 300 205 306 214 308 C280 308 330 262 330 208 C330 200 322 196 312 196 Z" fill="#0E1217"/>
-        <path d="M220 300 C258 262 292 232 320 208" fill="none" stroke="#0E1217" stroke-width="0"/>
-        <path d="M224 300 C258 266 288 238 316 214" fill="none" stroke="#34C759" stroke-width="10" stroke-linecap="round" opacity=".55"/>
-      </svg>
-    </div>
-    <div class="meta">
-      <span class="num">3</span>
-      <p class="name">Пузырь + лист (ИИ-диетолог)</p>
-      <p class="why">Пузырь-реплика с листом = «умный собеседник про питание». Подчёркивает, что Нутри — ИИ, с которым общаешься.</p>
-    </div>
-  </div>
-
-  <!-- 4: Монограмма N + лист -->
-  <div class="card">
-    <div class="ico">
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="n4" x1="0" y1="1" x2="1" y2="0">
-            <stop offset="0%" stop-color="#2AA84C"/><stop offset="100%" stop-color="#3FC7E0"/>
-          </linearGradient>
-        </defs>
-        <rect width="512" height="512" fill="#12171E"/>
-        <!-- N -->
-        <g fill="url(#n4)">
-          <rect x="150" y="160" width="40" height="192" rx="14"/>
-          <rect x="322" y="160" width="40" height="192" rx="14"/>
-          <path d="M168 160 L206 160 L362 320 L362 352 L324 352 L168 192 Z"/>
+        <rect width="512" height="512" fill="url(#bgB)"/>
+        <g transform="rotate(-90 256 256)" fill="none" stroke-width="32" stroke-linecap="round" filter="url(#glowB)" opacity=".45">
+          <circle cx="256" cy="256" r="150" stroke="#34C759" stroke-dasharray="188 754.5"/>
+          <circle cx="256" cy="256" r="150" stroke="#5AA9FF" stroke-dasharray="188 754.5" transform="rotate(90 256 256)"/>
+          <circle cx="256" cy="256" r="150" stroke="#A78BFA" stroke-dasharray="188 754.5" transform="rotate(180 256 256)"/>
+          <circle cx="256" cy="256" r="150" stroke="#FFB23E" stroke-dasharray="188 754.5" transform="rotate(270 256 256)"/>
         </g>
-        <!-- лист-росток из правой ножки -->
-        <path d="M342 168 C342 132 366 108 402 108 C402 144 378 168 342 168 Z" fill="#34C759"/>
+        <g transform="rotate(-90 256 256)" fill="none" stroke-width="32" stroke-linecap="round">
+          <circle cx="256" cy="256" r="150" stroke="#34C759" stroke-dasharray="188 754.5"/>
+          <circle cx="256" cy="256" r="150" stroke="#5AA9FF" stroke-dasharray="188 754.5" transform="rotate(90 256 256)"/>
+          <circle cx="256" cy="256" r="150" stroke="#A78BFA" stroke-dasharray="188 754.5" transform="rotate(180 256 256)"/>
+          <circle cx="256" cy="256" r="150" stroke="#FFB23E" stroke-dasharray="188 754.5" transform="rotate(270 256 256)"/>
+        </g>
+        <path d="M256 342 C253 302 256 274 256 244" fill="none" stroke="url(#leafB)" stroke-width="15" stroke-linecap="round"/>
+        <path d="M256 300 C250 256 214 234 168 229 C170 274 210 304 256 300 Z" fill="url(#leafB)"/>
+        <path d="M256 288 C262 240 302 216 350 210 C348 258 308 292 256 288 Z" fill="url(#leafB)"/>
+        <circle cx="352" cy="176" r="7" fill="#EAFBEF" opacity=".9"/>
       </svg>
     </div>
     <div class="meta">
-      <span class="num">4</span>
-      <p class="name">Монограмма «N» + лист</p>
-      <p class="why">Буква N (Нутри) с листком-ростком. Брендовая, узнаваемая как «наша», масштабируется от favicon до вывески.</p>
+      <span class="num">B</span>
+      <p class="name">Сочный фон, белый росток</p>
+      <p class="why">Богатый изумрудный градиент-фон — иконка «выпрыгивает» на любом рабочем столе. Росток белый → максимальный контраст и чистота.</p>
     </div>
   </div>
+
+  <!-- C: маскот-капля (живой, но без лица) -->
+  <div class="card">
+    <div class="ico">
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="bgC" cx="50%" cy="40%" r="72%"><stop offset="0" stop-color="#1a2a22"/><stop offset="100%" stop-color="#0E1217"/></radialGradient>
+          <linearGradient id="dropC" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#63EA86"/><stop offset="1" stop-color="#22A048"/></linearGradient>
+          <radialGradient id="glossC" cx="38%" cy="30%" r="45%"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+          <filter id="glowC" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="10" result="b"/></filter>
+        </defs>
+        <rect width="512" height="512" fill="url(#bgC)"/>
+        <!-- glow -->
+        <path d="M256 108 C332 214 372 262 372 322 A116 116 0 1 1 140 322 C140 262 180 214 256 108 Z" fill="#34C759" filter="url(#glowC)" opacity=".38"/>
+        <!-- drop body -->
+        <path d="M256 108 C332 214 372 262 372 322 A116 116 0 1 1 140 322 C140 262 180 214 256 108 Z" fill="url(#dropC)"/>
+        <!-- leaf midrib + side veins -->
+        <g fill="none" stroke="#0E3A1C" stroke-opacity=".32" stroke-width="12" stroke-linecap="round">
+          <path d="M256 196 C256 280 256 350 256 424"/>
+          <path d="M256 296 C232 286 214 282 196 281"/>
+          <path d="M256 330 C280 320 298 316 316 315"/>
+          <path d="M256 360 C236 352 222 349 208 348"/>
+        </g>
+        <!-- gloss highlight -->
+        <ellipse cx="212" cy="238" rx="52" ry="70" fill="url(#glossC)" transform="rotate(-24 212 238)"/>
+      </svg>
+    </div>
+    <div class="meta">
+      <span class="num">C</span>
+      <p class="name">Маскот-капля (живой знак)</p>
+      <p class="why">Глянцевая капля-лист как маленький «характер» — без лица, но ощущается живым и дружелюбным. Прямо про твою мысль: внутри живой диетолог, снаружи — тёплый знак, а не сухой листик.</p>
+    </div>
+  </div>
+
 </div>
 
 <footer>
-  Как на домашнем экране (мелкий размер) — читается ли силуэт:
-  <div class="home">
-    <div class="mini"><svg viewBox="0 0 512 512"><rect width="512" height="512" fill="url(#bg1)"/><g transform="rotate(-90 256 256)" fill="none" stroke-width="30" stroke-linecap="round"><circle cx="256" cy="256" r="150" stroke="#34C759" stroke-dasharray="188 754.5"/><circle cx="256" cy="256" r="150" stroke="#5AA9FF" stroke-dasharray="188 754.5" transform="rotate(90 256 256)"/><circle cx="256" cy="256" r="150" stroke="#A78BFA" stroke-dasharray="188 754.5" transform="rotate(180 256 256)"/><circle cx="256" cy="256" r="150" stroke="#FFB23E" stroke-dasharray="188 754.5" transform="rotate(270 256 256)"/></g><path d="M256 330 C256 300 256 276 256 246" fill="none" stroke="#ECEFF1" stroke-width="14" stroke-linecap="round"/><path d="M256 268 C224 268 198 244 198 208 C236 208 258 232 256 268 Z" fill="#ECEFF1"/><path d="M256 250 C288 250 314 226 314 190 C276 190 254 214 256 250 Z" fill="#34C759"/></svg></div>
-    <div class="ph"></div><div class="ph"></div>
-    <span class="lbl">← №1 среди «обычных» иконок</span>
-  </div>
+  Про «одушевлённость»: на иконке живого человека держать не будем (персоны меняются) — но вариант <b>C</b> как раз даёт «живость» без лица: тёплый глянцевый знак-маскот. A и B — про суть (учёт КБЖУ), C — про эмоцию. Можно и смешать: фон от B + росток-искорка от A, или каплю C с тонким кольцом.
 </footer>
 </body>
 </html>
