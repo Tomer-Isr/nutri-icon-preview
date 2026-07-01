@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Темы под персоны — превью</title>
+<style>
+  body{margin:0;background:#07090C;color:#ECEFF1;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;padding:24px 16px 60px}
+  .head{max-width:900px;margin:0 auto 18px}
+  h1{font-size:22px;font-weight:800;margin:0 0 6px}
+  .sub{color:#99A2AD;font-size:14px;line-height:1.55;margin:0}
+  .grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:680px){.grid{grid-template-columns:1fr 1fr}}
+  .theme{border-radius:22px;padding:16px;background:var(--bg);border:1px solid rgba(255,255,255,.06)}
+  .tlabel{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+  .temoji{font-size:20px}
+  .tname{font-size:15px;font-weight:800;color:var(--text)}
+  .trole{font-size:12px;color:var(--muted)}
+  .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);margin-left:auto}
+  /* карточка "Сегодня" */
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:18px;
+    box-shadow:0 2px 14px rgba(0,0,0,.35);padding:16px}
+  .ring{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+  .kcalbig{font-size:26px;font-weight:800;color:var(--text);line-height:1}
+  .kcalsub{font-size:12px;color:var(--muted);margin-top:3px}
+  .btn{display:inline-block;margin-top:2px;background:var(--accent);color:var(--bg);
+    font-weight:700;font-size:13px;border-radius:12px;padding:9px 14px}
+  .mrow{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:9px 0 4px}
+  .mrow b{color:var(--text)}
+  .bar{height:8px;border-radius:6px;background:var(--line);overflow:hidden}
+  .bar>i{display:block;height:100%;border-radius:6px}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--line);color:var(--text);
+    font-size:12px;font-weight:600;border-radius:999px;padding:6px 12px;margin-top:12px}
+  .foot{max-width:900px;margin:18px auto 0;color:#99A2AD;font-size:13px;line-height:1.6}
+
+  /* ПАЛИТРЫ ПО ПЕРСОНАМ */
+  .friend{--bg:#0E1217;--card:#1C232C;--line:#2C333B;--text:#ECEFF1;--muted:#99A2AD;--accent:#34C759}
+  .coach {--bg:#14100D;--card:#241B15;--line:#39291F;--text:#F3ECE8;--muted:#A8998F;--accent:#FF6A3D}
+  .expert{--bg:#0B1017;--card:#16202E;--line:#26364A;--text:#E7EEF6;--muted:#8FA0B4;--accent:#4C8DFF}
+  .cheer {--bg:#120E1A;--card:#221A30;--line:#352A49;--text:#F0EAF7;--muted:#A497B4;--accent:#B667FF}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>Цветовые темы под персоны — превью</h1>
+  <p class="sub">Один и тот же экран «Сегодня» в 4 темах. Цвета КБЖУ (белки/жиры/углеводы) остаются одинаковыми — это данные; меняются фон, поверхности и <b>акцент</b> персоны. Скажи, какие направления заходят, что перекрасить (акцент светлее/темнее, фон холоднее/теплее) — и после твоего «ок» перекрашу приложение (нативка + Mini App).</p>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="foot">Дефолт (Подруга=зелёная) = текущий вид приложения, ничего не меняется, пока сам не выберешь другую персону. Остальные три — новые. Это макет для утверждения направления, финальные оттенки подкрутим на живом экране.</div>
+
+<script>
+const themes = [
+  ['friend','🫶','Подруга','зелёная — тёплая, текущая'],
+  ['coach','💪','Тренер','энергия — оранжево-красная'],
+  ['expert','🧠','Эксперт','спокойная — синяя'],
+  ['cheer','✨','Весельчак','яркая — фиолетовая'],
+]
+const MACRO={protein:'#A78BFA',fat:'#FFB23E',carbs:'#5AA9FF'}
+function ring(accent){
+  const r=34,c=2*Math.PI*r,pct=0.62
+  return `<svg width="86" height="86" viewBox="0 0 86 86">
+    <circle cx="43" cy="43" r="${r}" fill="none" stroke="var(--line)" stroke-width="9"/>
+    <circle cx="43" cy="43" r="${r}" fill="none" stroke="${accent}" stroke-width="9" stroke-linecap="round"
+      stroke-dasharray="${c}" stroke-dashoffset="${c*(1-pct)}" transform="rotate(-90 43 43)"/>
+    <text x="43" y="40" text-anchor="middle" fill="var(--text)" font-size="17" font-weight="800">1550</text>
+    <text x="43" y="55" text-anchor="middle" fill="var(--muted)" font-size="9">/ 2499</text>
+  </svg>`
+}
+const grid=document.getElementById('grid')
+grid.innerHTML=themes.map(([cls,emoji,name,role])=>`
+  <div class="theme ${cls}">
+    <div class="tlabel"><span class="temoji">${emoji}</span>
+      <span><span class="tname">${name}</span><br><span class="trole">${role}</span></span>
+      <span class="dot"></span></div>
+    <div class="card">
+      <div class="ring">${ring('var(--accent)')}
+        <div><div class="kcalbig">1550<span style="font-size:14px;color:var(--muted)"> ккал</span></div>
+        <div class="kcalsub">осталось 949 · норма 2499</div>
+        <div class="btn">🔮 Что скажет Нутри?</div></div></div>
+      <div class="mrow"><span>Белки <b>92 г</b></span><span>60%</span></div>
+      <div class="bar"><i style="width:60%;background:${MACRO.protein}"></i></div>
+      <div class="mrow"><span>Жиры <b>41 г</b></span><span>59%</span></div>
+      <div class="bar"><i style="width:59%;background:${MACRO.fat}"></i></div>
+      <div class="mrow"><span>Углеводы <b>180 г</b></span><span>52%</span></div>
+      <div class="bar"><i style="width:52%;background:${MACRO.carbs}"></i></div>
+      <span class="chip">💧 Вода · 1.2 / 2.1 л</span>
+    </div>
+  </div>`).join('')
+</script>
+</body>
+</html>
