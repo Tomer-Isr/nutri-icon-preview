@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Нутри · Подруга — showcase атмосферы</title>
+<style>
+  :root{--bg:#0E1217;--card:#1C232C;--line:#2C333B;--text:#ECEFF1;--muted:#99A2AD;--accent:#34C759;
+    --protein:#A78BFA;--fat:#FFB23E;--carbs:#5AA9FF}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;min-height:100%}
+  /* ── АТМОСФЕРА (тонкая, затемнённая) ── */
+  .atmos{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .glow{position:absolute;left:50%;top:-160px;width:520px;height:520px;transform:translateX(-50%);
+    background:radial-gradient(circle,rgba(52,199,89,.22),rgba(52,199,89,0) 62%);
+    filter:blur(20px);animation:breathe 7s ease-in-out infinite}
+  .glow2{position:absolute;right:-120px;bottom:-80px;width:360px;height:360px;
+    background:radial-gradient(circle,rgba(52,199,89,.12),rgba(52,199,89,0) 65%);filter:blur(24px)}
+  @keyframes breathe{0%,100%{opacity:.75;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+  .leaf{position:absolute;opacity:.07;color:#34C759;animation:drift linear infinite}
+  @keyframes drift{0%{transform:translateY(20px) rotate(0deg)}50%{transform:translateY(-24px) rotate(12deg)}100%{transform:translateY(20px) rotate(0deg)}}
+  /* ── КОНТЕНТ ── */
+  .phone{position:relative;z-index:1;max-width:430px;margin:0 auto;padding:18px 16px 40px}
+  .hdr{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .avatar{width:56px;height:56px;border-radius:50%;background:var(--accent);color:var(--bg);
+    display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;cursor:pointer;
+    box-shadow:0 0 0 0 rgba(52,199,89,.5);transition:transform .12s;user-select:none;position:relative}
+  .avatar:active{transform:scale(.92)}
+  .hname{font-size:18px;font-weight:800}
+  .hsub{font-size:13px;color:var(--muted);margin-top:2px}
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:20px;
+    box-shadow:0 2px 16px rgba(0,0,0,.4);padding:18px;margin-bottom:14px}
+  .ring{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+  .ringsvg{filter:drop-shadow(0 0 8px rgba(52,199,89,.35));animation:breathe 7s ease-in-out infinite}
+  .kbig{font-size:26px;font-weight:800;line-height:1}
+  .kbig small{font-size:14px;color:var(--muted);font-weight:600}
+  .ksub{font-size:12px;color:var(--muted);margin:3px 0 10px}
+  .btn{display:inline-block;background:var(--accent);color:var(--bg);font-weight:700;font-size:13px;
+    border:none;border-radius:12px;padding:10px 15px;cursor:pointer;transition:transform .12s}
+  .btn:active{transform:scale(.95)}
+  .mrow{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:10px 0 4px}
+  .mrow b{color:var(--text)}
+  .bar{height:8px;border-radius:6px;background:var(--line);overflow:hidden}
+  .bar>i{display:block;height:100%;border-radius:6px}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--line);color:var(--text);
+    font-size:12px;font-weight:600;border-radius:999px;padding:7px 13px;margin-top:12px}
+  .demo{margin-top:6px;border:1px dashed #34C75955;border-radius:14px;padding:14px;text-align:center}
+  .demo p{margin:0 0 10px;font-size:12px;color:var(--muted)}
+  .demobtn{background:transparent;border:1px solid var(--accent);color:var(--accent);font-weight:700;
+    font-size:14px;border-radius:12px;padding:10px 16px;cursor:pointer}
+  .demobtn:active{transform:scale(.96)}
+  .hint{max-width:430px;margin:8px auto 0;padding:0 16px;color:var(--muted);font-size:12px;line-height:1.5;position:relative;z-index:1}
+  /* toast */
+  #toast{position:fixed;left:50%;bottom:40px;transform:translateX(-50%) translateY(20px);opacity:0;
+    background:var(--card);border:1px solid var(--accent);color:var(--text);font-weight:700;font-size:15px;
+    padding:14px 22px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:50;transition:.3s;pointer-events:none}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  #fx{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+  .float{position:absolute;font-size:22px;will-change:transform,opacity}
+</style>
+</head>
+<body>
+<div class="atmos" id="atmos">
+  <div class="glow"></div><div class="glow2"></div>
+</div>
+
+<div class="phone">
+  <div class="hdr">
+    <div class="avatar" id="avatar" title="тапни меня">T</div>
+    <div><div class="hname">Tomer</div><div class="hsub">🎁 Пробный период · 🫶 Подруга</div></div>
+  </div>
+
+  <div class="card">
+    <div class="ring">
+      <svg class="ringsvg" width="88" height="88" viewBox="0 0 88 88">
+        <circle cx="44" cy="44" r="35" fill="none" stroke="var(--line)" stroke-width="9"/>
+        <circle cx="44" cy="44" r="35" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="219.9" stroke-dashoffset="83.6" transform="rotate(-90 44 44)"/>
+        <text x="44" y="41" text-anchor="middle" fill="var(--text)" font-size="17" font-weight="800">1550</text>
+        <text x="44" y="56" text-anchor="middle" fill="var(--muted)" font-size="9">/ 2499</text>
+      </svg>
+      <div>
+        <div class="kbig">1550<small> ккал</small></div>
+        <div class="ksub">осталось 949 · норма 2499</div>
+        <button class="btn" id="nutriBtn">🔮 Что скажет Нутри?</button>
+      </div>
+    </div>
+    <div class="mrow"><span>Белки <b>92 г</b></span><span>60%</span></div>
+    <div class="bar"><i style="width:60%;background:var(--protein)"></i></div>
+    <div class="mrow"><span>Жиры <b>41 г</b></span><span>59%</span></div>
+    <div class="bar"><i style="width:59%;background:var(--fat)"></i></div>
+    <div class="mrow"><span>Углеводы <b>180 г</b></span><span>52%</span></div>
+    <div class="bar"><i style="width:52%;background:var(--carbs)"></i></div>
+    <span class="chip">💧 Вода · 1.2 / 2.1 л</span>
+  </div>
+
+  <div class="demo">
+    <p>🎬 демо-момент (в приложении сработает сам при достижении нормы):</p>
+    <button class="demobtn" id="goalBtn">🫶 Выполнить норму дня</button>
+  </div>
+</div>
+
+<div class="hint">Это showcase атмосферы «Подруги»: тёплое зелёное сияние, плавающие листики (тонко, читаемость цела), пружинки на нажатиях. <b>Тапни аватар</b> → сердечки. <b>«Выполнить норму»</b> → мягкое конфетти + «Горжусь тобой». Одобришь вайб — раскатаю на все 4 персоны в нативке и Mini App.</div>
+
+<div id="fx"></div>
+<div id="toast"></div>
+
+<script>
+  const R = () => Math.random()
+  // фоновые листики
+  const atmos = document.getElementById('atmos')
+  const leafPath = 'M12 2 C6 2 2 7 2 13 C2 15 3 16 5 16 C13 16 18 9 18 3 C18 2.5 17 2 12 2 Z'
+  for (let i=0;i<7;i++){
+    const s=document.createElementNS('http://www.w3.org/2000/svg','svg')
+    s.setAttribute('viewBox','0 0 20 20'); s.classList.add('leaf')
+    const sz=24+R()*30
+    s.style.width=sz+'px'; s.style.height=sz+'px'
+    s.style.left=(6+R()*88)+'%'; s.style.top=(8+R()*84)+'%'
+    s.style.animationDuration=(6+R()*6)+'s'; s.style.animationDelay=(-R()*6)+'s'
+    s.innerHTML='<path d="'+leafPath+'" fill="currentColor"/>'
+    atmos.appendChild(s)
+  }
+  // пасхалка 1: сердечки от аватара
+  const fx=document.getElementById('fx')
+  function burstHearts(x,y){
+    for(let i=0;i<9;i++){
+      const el=document.createElement('div'); el.className='float'; el.textContent='🫶'
+      el.style.left=x+'px'; el.style.top=y+'px'
+      fx.appendChild(el)
+      const dx=(R()-.5)*140, dy=-90-R()*120, rot=(R()-.5)*60
+      el.animate([{transform:'translate(-50%,-50%) scale(.5) rotate(0)',opacity:0},
+        {transform:`translate(calc(-50% + ${dx*0.4}px),calc(-50% + ${dy*0.4}px)) scale(1.1) rotate(${rot*0.5}deg)`,opacity:1,offset:.3},
+        {transform:`translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) scale(.9) rotate(${rot}deg)`,opacity:0}],
+        {duration:1400+R()*500,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>el.remove()
+    }
+  }
+  const av=document.getElementById('avatar')
+  av.addEventListener('click',()=>{
+    const r=av.getBoundingClientRect(); burstHearts(r.left+r.width/2,r.top+r.height/2)
+    av.animate([{transform:'scale(1)'},{transform:'scale(1.18)'},{transform:'scale(1)'}],{duration:450,easing:'cubic-bezier(.2,.8,.3,1.4)'})
+  })
+  // пасхалка 2: конфетти + тост
+  const toast=document.getElementById('toast')
+  function showToast(msg){toast.textContent=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)}
+  const CONF=['#34C759','#6BF08C','#EAFBEF','#A7F0BE','#FFFFFF']
+  function confetti(){
+    const cx=innerWidth/2, cy=innerHeight/2
+    for(let i=0;i<46;i++){
+      const el=document.createElement('div'); el.className='float'
+      el.style.width='9px';el.style.height='13px';el.style.borderRadius='2px'
+      el.style.background=CONF[(i*7)%CONF.length]
+      el.style.left=cx+'px'; el.style.top=cy+'px'
+      fx.appendChild(el)
+      const ang=R()*Math.PI*2, dist=90+R()*230
+      const dx=Math.cos(ang)*dist, dy=Math.sin(ang)*dist - 60 + R()*180
+      el.animate([{transform:'translate(-50%,-50%) scale(.4) rotate(0)',opacity:1},
+        {transform:`translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) scale(1) rotate(${(R()-.5)*720}deg)`,opacity:1,offset:.7},
+        {transform:`translate(calc(-50% + ${dx*1.15}px),calc(-50% + ${dy+160}px)) scale(.9) rotate(${(R()-.5)*900}deg)`,opacity:0}],
+        {duration:1600+R()*700,easing:'cubic-bezier(.15,.6,.3,1)'}).onfinish=()=>el.remove()
+    }
+  }
+  document.getElementById('goalBtn').addEventListener('click',()=>{confetti();showToast('🫶 Горжусь тобой!')})
+  document.getElementById('nutriBtn').addEventListener('click',()=>showToast('Умница, что заглянула 🫶 Смотрю твой день…'))
+</script>
+</body>
+</html>
