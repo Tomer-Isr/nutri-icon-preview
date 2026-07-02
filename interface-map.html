@@ -67,7 +67,7 @@
   <p class="sub">Разные масштабы и приёмы, лицо видно везде, пузыри — только в пустых зонах (не поверх заголовков). Персонаж <b>рядом с данными, а не поверх них</b>. Показано на Подруге.</p>
 </header>
 <div class="note">
-  🎯 Исправил по твоим замечаниям: (1) лицо не срезано и не за кольцом; (2) речевой пузырь не перекрывает системный текст; (3) масштаб РАЗНЫЙ — от героя (Сегодня) до крохотного аватара (Дневник). Персонаж обрамляет экран, не заслоняет данные.
+  🎯 Теперь ФОН У ПЕРСОНАЖА ВЫРЕЗАН начисто (rembg) → он органично «стоит» на фоне экрана, без прямоугольника. Плюс: лицо видно, пузыри не на системном тексте, масштаб разный (герой → мини-аватар). Мини-аватар в «Дневнике» — намеренно в круге (аватарка).
 </div>
 
 <div class="row">
@@ -79,8 +79,8 @@
     <div class="phone">
       <div class="sb"><span>9:41</span><span>5G ▲ 🔋</span></div>
       <div class="htitle">Сегодня</div>
-      <!-- персонаж справа, по пояс; лицо в верхней трети кадра -->
-      <img class="char" src="friend_pose_present.png" style="bottom:120px;right:-16%;width:70%;height:52%;object-position:50% 4%;-webkit-mask-image:radial-gradient(95% 90% at 45% 40%,#000 58%,transparent 84%);mask-image:radial-gradient(95% 90% at 45% 40%,#000 58%,transparent 84%)">
+      <!-- персонаж справа, по пояс; фон вырезан → органично, снизу лёгкое растворение обреза -->
+      <img class="char" src="friend_pose_present_cut.png" style="bottom:104px;right:-12%;width:66%;height:56%;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)">
       <!-- кольцо: центр-лево, не пересекается с персонажем -->
       <svg style="position:absolute;top:88px;left:8px;z-index:16" width="132" height="132" viewBox="0 0 150 150">
         <circle cx="75" cy="75" r="60" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="11"/>
@@ -127,8 +127,8 @@
           <div class="m"><div class="v" style="color:var(--fat)">🔥12</div><div class="k">серия</div></div>
         </div>
       </div>
-      <!-- маленький персонаж в правом нижнем углу, голова+плечи, целиком в кадре -->
-      <img class="char" src="friend_A.png" style="bottom:52px;right:-6px;width:44%;height:34%;object-position:50% 6%;-webkit-mask-image:radial-gradient(90% 90% at 50% 42%,#000 55%,transparent 82%);mask-image:radial-gradient(90% 90% at 50% 42%,#000 55%,transparent 82%)">
+      <!-- маленький персонаж в правом нижнем углу, вырезан → органично -->
+      <img class="char" src="friend_A_cut.png" style="bottom:52px;right:2px;width:42%;height:40%;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(to bottom,#000 88%,transparent 100%);mask-image:linear-gradient(to bottom,#000 88%,transparent 100%)">
       <div class="bubble" style="bottom:150px;left:14px">Неделя — огонь! 💚<span style="position:absolute;bottom:-6px;left:20px;border-top-color:#fff;border-bottom:0"></span></div>
       <div class="nav"><div class="it"><div class="dot"></div>Сегодня</div><div class="it on"><div class="dot"></div>Неделя</div><div class="plus"></div><div class="it"><div class="dot"></div>Дневник</div><div class="it"><div class="dot"></div>Профиль</div></div>
     </div>
@@ -167,7 +167,7 @@
     <div class="phone">
       <div class="sb"><span>9:41</span><span>5G ▲ 🔋</span></div>
       <div class="htitle">Профиль</div>
-      <img class="char" src="friend_A.png" style="top:50px;left:0;width:100%;height:36%;object-position:50% 12%;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)">
+      <img class="char" src="friend_A_cut.png" style="top:48px;left:50%;transform:translateX(-50%);width:70%;height:34%;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)">
       <div class="bubble" style="top:150px;right:12px">Выбери, какой мне быть 🫶<span style="position:absolute;bottom:-6px;right:20px;border-top-color:#fff;border-bottom:0"></span></div>
       <div class="panel" style="top:230px">
         <div class="plabel">ХАРАКТЕР НУТРИ</div>
