@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Нутри «Подруга» — доводка: аниме + реализм</title>
+<style>
+  :root{
+    --bg:#0E1217; --card:#1C232C; --line:#2C333B; --text:#ECEFF1; --muted:#99A2AD;
+    --green:#34C759; --protein:#A78BFA; --fat:#FFB23E; --carbs:#5AA9FF;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;padding:24px 16px 64px}
+  header{max-width:900px;margin:0 auto 10px}
+  h1{font-size:22px;font-weight:800;margin:0 0 8px}
+  .sub{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 8px}
+  .note{max-width:900px;margin:0 auto 24px;background:#16202a;border:1px solid var(--line);
+    border-radius:14px;padding:12px 14px;color:#c8d0d9;font-size:13px;line-height:1.6}
+  .stylewrap{max-width:900px;margin:0 auto 30px;background:var(--card);
+    border:1px solid rgba(255,255,255,.05);border-radius:20px;
+    box-shadow:0 2px 14px rgba(0,0,0,.35);overflow:hidden}
+  .styhead{padding:16px 18px 4px}
+  .tag{display:inline-block;font-size:12px;font-weight:800;color:var(--bg);background:var(--green);
+    border-radius:999px;padding:3px 11px;margin-bottom:8px}
+  .styname{font-size:18px;font-weight:800;margin:0 0 4px}
+  .stydesc{color:var(--muted);font-size:13px;line-height:1.55;margin:0}
+  .cols{display:grid;grid-template-columns:1fr;gap:18px;padding:16px 18px 20px}
+  @media(min-width:720px){.cols{grid-template-columns:1fr 1fr;align-items:center}}
+  .raw{border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.5);
+    background:#0b120e;aspect-ratio:832/1216;max-height:440px;margin:0 auto}
+  .raw img{display:block;width:100%;height:100%;object-fit:cover;
+    animation:breathe 6s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1.02) translateY(-4px)}}
+  .caphint{color:var(--muted);font-size:12px;text-align:center;margin:8px 0 0}
+  .phonewrap{display:flex;flex-direction:column;align-items:center}
+  .phone{width:250px;height:520px;background:var(--bg);border-radius:34px;overflow:hidden;
+    position:relative;box-shadow:0 14px 40px rgba(0,0,0,.6);border:1px solid #222b33}
+  .statusbar{position:absolute;top:0;left:0;right:0;height:26px;display:flex;justify-content:space-between;
+    align-items:center;padding:0 16px;font-size:11px;color:#cfd6dd;z-index:5}
+  .hero{position:absolute;top:0;left:0;right:0;height:270px;overflow:hidden}
+  .hero img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;
+    animation:breathe 6s ease-in-out infinite}
+  .heroFade{position:absolute;left:0;right:0;bottom:0;height:120px;
+    background:linear-gradient(to bottom,rgba(14,18,23,0) 0%,rgba(14,18,23,.7) 55%,var(--bg) 100%)}
+  .hi{position:absolute;top:170px;left:16px;z-index:3;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .hi .greet{font-size:12px;color:#e6f7ec;font-weight:600;opacity:.95}
+  .hi .greet b{color:#fff}
+  .sheet{position:absolute;left:0;right:0;bottom:0;top:238px;background:var(--bg);
+    border-radius:22px 22px 0 0;padding:14px 14px 0;z-index:2;overflow:hidden}
+  .kcard{background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:18px;
+    padding:14px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+  .kmeta .big{font-size:22px;font-weight:800;line-height:1}
+  .kmeta .big span{font-size:12px;font-weight:600;color:var(--muted)}
+  .kmeta .lab{font-size:11px;color:var(--muted);margin-top:3px}
+  .macros{display:flex;gap:8px;margin-top:10px}
+  .m{flex:1;background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:14px;
+    padding:8px 6px;text-align:center}
+  .m .v{font-size:14px;font-weight:800}
+  .m .k{font-size:9px;color:var(--muted);margin-top:2px}
+  footer{max-width:900px;margin:26px auto 0;color:var(--muted);font-size:13px;line-height:1.65}
+  footer b{color:#dfe5ea}
+</style>
+</head>
+<body>
+<header>
+  <h1>Нутри «Подруга» — аниме + чуть реализма</h1>
+  <p class="sub">Ты выбрал <b>стиль 3 (аниме)</b> и попросил ~15% больше реализма. Вот два оттенка этой «дозы» — тот же типаж (брюнетка, зелёный спортивный топ), меняется только реалистичность. Выбери <b>A</b> или <b>B</b> (или «между ними» / подкрутить) — по нему сделаю всех 4 персон.</p>
+</header>
+
+<div class="note">
+  🔎 Разница: <b>A</b> — более «нарисованный», мягкая полу-реалистичная живопись (аниме-душа сохранена сильнее). <b>B</b> — чуть объёмнее, 2.5D: живее и «дороже», лицо всё ещё стилизованное, но ближе к реальному. Оба — не живой человек, безопасны для сторов.
+</div>
+
+<!-- VARIANT A -->
+<section class="stylewrap">
+  <div class="styhead">
+    <span class="tag">Вариант A</span>
+    <p class="styname">Полу-реалистичное аниме (живопись)</p>
+    <p class="stydesc">Мягкий painterly-рендер. Ближе к исходному аниме, но с реалистичным светом и кожей. Тёплый, «ламповый».</p>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="raw"><img src="friend_v3r_A.png" alt="Подруга — вариант A"></div>
+      <p class="caphint">образ крупно (двигается — «дышит»)</p>
+    </div>
+    <div class="phonewrap">
+      <div class="phone">
+        <div class="statusbar"><span>9:41</span><span>▲ ●●● 🔋</span></div>
+        <div class="hero"><img src="friend_v3r_A.png" alt=""><div class="heroFade"></div></div>
+        <div class="hi"><div class="greet">Привет, <b>Томер</b> 🫶</div></div>
+        <div class="sheet">
+          <div class="kcard">
+            <svg width="72" height="72" viewBox="0 0 72 72">
+              <circle cx="36" cy="36" r="30" fill="none" stroke="#2C333B" stroke-width="8"/>
+              <circle cx="36" cy="36" r="30" fill="none" stroke="#34C759" stroke-width="8"
+                stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="66" transform="rotate(-90 36 36)"/>
+            </svg>
+            <div class="kmeta"><div class="big">1180<span> / 1800</span></div><div class="lab">ккал сегодня</div></div>
+          </div>
+          <div class="macros">
+            <div class="m"><div class="v" style="color:var(--protein)">86</div><div class="k">Белки, г</div></div>
+            <div class="m"><div class="v" style="color:var(--fat)">42</div><div class="k">Жиры, г</div></div>
+            <div class="m"><div class="v" style="color:var(--carbs)">120</div><div class="k">Углеводы, г</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="caphint">на экране «Сегодня»</p>
+    </div>
+  </div>
+</section>
+
+<!-- VARIANT B -->
+<section class="stylewrap">
+  <div class="styhead">
+    <span class="tag">Вариант B</span>
+    <p class="styname">2.5D — чуть больше объёма и «жизни»</p>
+    <p class="stydesc">Реалистичнее свет, объём, кожа — «дороже» и живее. Лицо всё ещё стилизованное (не фото). Максимально близко к «красивая девушка», оставаясь рисунком.</p>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="raw"><img src="friend_v3r_B.png" alt="Подруга — вариант B"></div>
+      <p class="caphint">образ крупно (двигается — «дышит»)</p>
+    </div>
+    <div class="phonewrap">
+      <div class="phone">
+        <div class="statusbar"><span>9:41</span><span>▲ ●●● 🔋</span></div>
+        <div class="hero"><img src="friend_v3r_B.png" alt=""><div class="heroFade"></div></div>
+        <div class="hi"><div class="greet">Привет, <b>Томер</b> 🫶</div></div>
+        <div class="sheet">
+          <div class="kcard">
+            <svg width="72" height="72" viewBox="0 0 72 72">
+              <circle cx="36" cy="36" r="30" fill="none" stroke="#2C333B" stroke-width="8"/>
+              <circle cx="36" cy="36" r="30" fill="none" stroke="#34C759" stroke-width="8"
+                stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="66" transform="rotate(-90 36 36)"/>
+            </svg>
+            <div class="kmeta"><div class="big">1180<span> / 1800</span></div><div class="lab">ккал сегодня</div></div>
+          </div>
+          <div class="macros">
+            <div class="m"><div class="v" style="color:var(--protein)">86</div><div class="k">Белки, г</div></div>
+            <div class="m"><div class="v" style="color:var(--fat)">42</div><div class="k">Жиры, г</div></div>
+            <div class="m"><div class="v" style="color:var(--carbs)">120</div><div class="k">Углеводы, г</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="caphint">на экране «Сегодня»</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Что ответить:</b> A или B (или «B, но ещё чуть реалистичнее» / «между A и B»). Как определимся с дозой реализма на Подруге — сделаю в этом же стиле остальных: <b>Тренер</b> (накачанный крутой мужик), <b>Эксперт</b>, <b>Весельчак</b> — с единым визуальным языком, каждый в своей теме-цвете. Дальше вживляю в приложение.
+  <br><br>⚠️ Пока только концепт-превью — в приложение ничего не вставлял.
+</footer>
+</body>
+</html>
